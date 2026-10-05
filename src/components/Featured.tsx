@@ -8,6 +8,8 @@ import garlicbread from "../../public/garlic bread1.png";
 import coldCoffee from "../../public/coldCoffee.png";
 import Samosa from "../../public/samosa.png";
 import Greentea from "../../public/greentea1.png";
+import Link from "next/link";
+
 
 type Card = {
   id: number;
@@ -41,30 +43,30 @@ const cards: Card[] = [
     price: 220,
     image: burger2,
   },
-  {
-    id: 5,
-    name: "Cold Coffee",
-    price: 25,
-    image: coldCoffee,
-  },
-  {
-    id: 6,
-    name: "Green Tea",
-    price: 20,
-    image: Greentea,
-  },
-  {
-    id: 7,
-    name: "Samosa",
-    price: 45,
-    image: Samosa,
-  },
-  {
-    id: 8,
-    name: "Garlic Bread",
-    price: 80,
-    image: garlicbread,
-  },
+//   {
+//     id: 5,
+//     name: "Cold Coffee",
+//     price: 25,
+//     image: coldCoffee,
+//   },
+//   {
+//     id: 6,
+//     name: "Green Tea",
+//     price: 20,
+//     image: Greentea,
+//   },
+//   {
+//     id: 7,
+//     name: "Samosa",
+//     price: 45,
+//     image: Samosa,
+//   },
+//   {
+//     id: 8,
+//     name: "Garlic Bread",
+//     price: 80,
+//     image: garlicbread,
+//   },
 ];
 
 const Featured = () => {
@@ -109,8 +111,8 @@ const Featured = () => {
         ))}
 
         <div className=" flex items-center  justify-center w-full">
-          <button className="w-fit  px-6 py-3 mt-8 bg-red-500 rounded-2xl text-white font-bold active:scale-110">
-            Show More
+          <button  className="w-fit  px-6 py-3 mt-8 bg-red-500 rounded-2xl text-white font-bold active:scale-110">
+            <Link href="/menu">Show More</Link>  
           </button>
         </div>
       </div>

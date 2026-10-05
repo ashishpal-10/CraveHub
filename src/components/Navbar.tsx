@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Menu from "@/components/menu";
 import CartIcon from "./CartIcon";
-import Image from "next/image";
+
 
 const Navbar = () => {
   const user = false;
@@ -17,8 +17,8 @@ const Navbar = () => {
 
       <div className="hidden md:flex gap-4 font-bold">
         <Link href="/">Homepage</Link>
-        <Link href="/">Menu</Link>
-        <Link href="/">Orders</Link>
+        <Link href="/menu"> Our Menu</Link>
+        <Link href="/orders">Orders</Link>
       </div>
 
       {/* phone Number  */}
@@ -37,7 +37,7 @@ const Navbar = () => {
 
       {/* Mobile View */}
       <div className="md:hidden">
-        <Menu />
+        <Menu/>
       </div>
     </div>
   );

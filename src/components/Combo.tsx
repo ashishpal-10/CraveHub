@@ -28,7 +28,7 @@ const Combo = () => {
         <div className='flex-1 w-full flex items-center justify-between flex-col-reverse md:flex-row p-2 shadow-md md:px-10 bg-green-200 rounded-2xl'>
             {/* L  */}
             <div className="w-full flex flex-col p-6 mb-2">
-                <h1 className='text-3xl font-medium md:text-5xl mb-3 text-orange-300'>Family Combo Meal</h1>
+                <h1 className='text-3xl font-bold md:text-5xl mb-3 text-orange-300'>Family Combo Meal</h1>
                 <span className='text-xl font-medium md:text-2xl mb-3 text-gray-600'>Feed your family with our special combo deals.</span>
                 {/* <p className='font-medium md:text-xl'>Use Code <span className='font-bold'>TASTY30</span> at Checkout and delicious rewards</p> */}
 

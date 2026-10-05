@@ -2,7 +2,7 @@
 
 const orderPage = () => {
   return (
-    <div>Ordr page</div>
+    <div>Order page</div>
   )
 }
 
