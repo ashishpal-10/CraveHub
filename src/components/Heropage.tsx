@@ -33,7 +33,7 @@ const Heropage = () => {
     );
 
     return () => clearInterval(interval);
-  }, []);
+  }, [data.length]);
 
   return (
     <div className="flex flex-col mt-20 h-[calc(100vh-6rem)]  lg:flex-row gap-4 lg:px-20">

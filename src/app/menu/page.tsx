@@ -1,16 +1,15 @@
-import Cards from '@/components/Cards'
-import React from 'react'
+import Cards from "@/components/Cards";
+import React from "react";
 
 const Menupage = () => {
   return (
-    <div className='px-10 mt-10 py-10'>
-        <h1 className='text-4xl text-center font-bold'>Our Best Dishes </h1>
-
-    <div>
-      <Cards/>
+    <div className="px-10 mt-10 py-10">
+      <h1 className="text-4xl text-center font-bold">Our Menu </h1>
+      {/* <h1 className="text-4xl text-center font-bold">Our Best Dishes </h1> */}
+          <Cards />
+      <div></div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Menupage
+export default Menupage;

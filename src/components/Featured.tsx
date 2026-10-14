@@ -4,10 +4,6 @@ import burger2 from "../../public/burger1.png";
 import pizza1 from "../../public/pizza1.png";
 import pizza2 from "../../public/pizza2.png";
 import pizza3 from "../../public/pizza3.png";
-import garlicbread from "../../public/garlic bread1.png";
-import coldCoffee from "../../public/coldCoffee.png";
-import Samosa from "../../public/samosa.png";
-import Greentea from "../../public/greentea1.png";
 import Link from "next/link";
 
 

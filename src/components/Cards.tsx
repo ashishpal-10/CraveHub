@@ -1,6 +1,7 @@
 import React from "react";
 import cards from "./data";
 import Image from "next/image";
+import Link from "next/link";
 
 const Cards = () => {
   return (
@@ -26,9 +27,9 @@ const Cards = () => {
             <span className="text-lg font-bold text-gray-900">
               ${items.price}
             </span>
-            <button className="rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700 hover:scale-110 active:scale-90">
+            <Link href={`/products/${items.id}`} className="rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700 hover:scale-110 active:scale-90">
               Order Now
-            </button>
+            </Link>
           </div>
         </div>
       ))}
