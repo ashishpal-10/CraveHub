@@ -1,4 +1,8 @@
-import React, { useEffect, useState } from "react";
+"use client";
+
+import React, { useState } from "react";
+import { featuredProducts } from "./data";
+import { addItem } from "./cartStore";
 
 type props = {
   price: number;
@@ -6,15 +10,29 @@ type props = {
   options?: { title: string; additionalPrice: number }[];
 };
 const Price = ({ price, id, options }: props) => {
-  const [total, setTotal] = useState(price);
-  const [quantity,setQuantity] = useState(1);
-  const [selected,setSelected] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const [selected, setSelected] = useState(0);
+  const [added, setAdded] = useState(false);
 
-  useEffect(()=>{
-    setTotal(
-      quantity*(options ? price+options[selected].additionalPrice :price)
-    )
-  },[quantity,selected,options,price])
+  const product = featuredProducts.find((item) => item.id === id);
+  const unitPrice = options
+    ? price + options[selected].additionalPrice
+    : price;
+  const total = quantity * unitPrice;
+
+  const handleAdd = () => {
+    if (!product) return;
+    addItem({
+      id: product.id,
+      title: product.title,
+      img: product.img,
+      unitPrice,
+      quantity,
+      option: options?.[selected].title,
+    });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
+  };
 
   return (
     <div className="flex flex-col gap-4">
@@ -48,7 +66,12 @@ const Price = ({ price, id, options }: props) => {
             onClick={()=> setQuantity((prev)=>(prev<10 ? prev+1 :10))}>{">"}</button>
           </div>
         </div>
-        <button className="bg-red-500 text-white p-3 w-45  font-bold">Add to Cart</button>
+        <button
+          onClick={handleAdd}
+          className="bg-red-500 text-white p-3 w-45 font-bold hover:bg-red-600 transition cursor-pointer"
+        >
+          {added ? "Added ✓" : "Add to Cart"}
+        </button>
       </div>
     </div>
   );

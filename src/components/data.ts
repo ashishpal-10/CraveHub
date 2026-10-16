@@ -12,7 +12,7 @@ import Greentea from "../../public/greentea1.png";
 import burger1 from "../../public/burger1.png";
 import burger3 from "../../public/burger3.png";
 
-type Product = {
+export type Product = {
   id: number;
   title: string;
   desc: string;

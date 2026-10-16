@@ -1,7 +1,36 @@
-import React from "react";
-import { featuredProducts as cards } from "./data";
+"use client";
+
+import React, { useState } from "react";
+import { featuredProducts as cards, Product } from "./data";
 import Image from "next/image";
 import Link from "next/link";
+import { addItem } from "./cartStore";
+
+const AddButton = ({ item }: { item: Product }) => {
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = () => {
+    addItem({
+      id: item.id,
+      title: item.title,
+      img: item.img,
+      unitPrice: item.price,
+      quantity: 1,
+      option: item.options?.[0].title,
+    });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
+  };
+
+  return (
+    <button
+      onClick={handleAdd}
+      className="w-full rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700 hover:scale-105 active:scale-95 cursor-pointer"
+    >
+      {added ? "Added ✓" : "Add to Cart"}
+    </button>
+  );
+};
 
 const Cards = () => {
   return (
@@ -23,7 +52,7 @@ const Cards = () => {
             <h2 className="text-lg font-bold text-gray-800">{items.title}</h2>
           </div>
           {/* Price and Button */}
-          <div className="mt-4 flex items-center justify-around  gap-4 mb-4">
+          <div className="mt-4 flex items-center justify-around  gap-4">
             <span className="text-lg font-bold text-gray-900">
               ${items.price}
             </span>
@@ -31,6 +60,7 @@ const Cards = () => {
               Order Now
             </Link>
           </div>
+        
         </div>
       ))}
     </div>
