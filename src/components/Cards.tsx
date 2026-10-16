@@ -1,5 +1,5 @@
 import React from "react";
-import cards from "./data";
+import { featuredProducts as cards } from "./data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,14 +13,14 @@ const Cards = () => {
         >
           <div className="flex justify-center">
             <Image
-              src={items.image}
+              src={items.img}
               alt="Pizza"
               className="h-50 w-50 object-contain hover:scale-120"
             />
           </div>
           {/* Pizza Details */}
           <div className="mt-2 text-center">
-            <h2 className="text-lg font-bold text-gray-800">{items.name}</h2>
+            <h2 className="text-lg font-bold text-gray-800">{items.title}</h2>
           </div>
           {/* Price and Button */}
           <div className="mt-4 flex items-center justify-around  gap-4 mb-4">
