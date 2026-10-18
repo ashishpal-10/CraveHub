@@ -11,7 +11,7 @@ import {
   DELIVERY_FEE,
   FREE_DELIVERY_THRESHOLD,
 } from "@/components/cartStore";
-import { featuredProducts } from "@/components/data";
+// import { featuredProducts } from "@/components/data";
 
 const EmptyCart = () => (
   <div className="mt-2 flex flex-col items-center">
@@ -34,7 +34,7 @@ const EmptyCart = () => (
       </Link>
     </div>
 
-    <div className="mt-14 w-full">
+    {/* <div className="mt-14 w-full">
       <h3 className="text-center text-2xl font-bold text-gray-800">
         You may also like
       </h3>
@@ -77,7 +77,7 @@ const EmptyCart = () => (
           </div>
         ))}
       </div>
-    </div>
+    </div> */}
   </div>
 );
 
@@ -167,9 +167,9 @@ const CartPage = () => {
                   <button
                     aria-label={`Remove ${item.title} from cart`}
                     onClick={() => removeItem(item.key)}
-                    className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full  transition hover:scale-110 hover:bg-red-500"
+                    className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full    transition hover:scale-110 hover:bg-red-500"
                   >
-                    <Image src={crossImg} alt="" width={16} height={16} />
+                    <Image src={crossImg} alt="" width={16} height={16}  />
                   </button>
                 </div>
               </div>
